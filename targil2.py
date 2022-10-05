@@ -36,6 +36,7 @@ def add_student():
         s_name = (data["name"])
         cur.execute("""INSERT INTO Contacts(Name)VALUES (?)""", (s_name,))
         conn.commit()
+        print(f"added {s_name} to the contacts")
         return "student added"
 
 @app.route("/del/<ind>", methods=['DELETE'])
